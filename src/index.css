@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-orbitron: 'Orbitron', monospace, sans-serif;
+    --font-rajdhani: 'Rajdhani', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  
+  body {
+    background-color: #030712;
+    color: #e2e8f0;
+    font-family: var(--font-rajdhani);
+    overflow-x: hidden;
+    user-select: none;
+  }
+  
+  h1, h2, h3, h4, .font-hud {
+    font-family: var(--font-orbitron);
+    letter-spacing: 0.05em;
+  }
+
+  code, pre, .font-code {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Sci-Fi Neon Glow Utilities */
+.neon-glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.45), inset 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+.neon-glow-emerald {
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.45), inset 0 0 15px rgba(0, 255, 157, 0.2);
+}
+
+.neon-glow-magenta {
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.45), inset 0 0 15px rgba(255, 0, 128, 0.2);
+}
+
+.neon-glow-amber {
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.45), inset 0 0 15px rgba(255, 170, 0, 0.2);
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.8), 0 0 20px rgba(0, 243, 255, 0.4);
+}
+
+.neon-text-emerald {
+  text-shadow: 0 0 8px rgba(0, 255, 157, 0.8), 0 0 20px rgba(0, 255, 157, 0.4);
+}
+
+.neon-text-magenta {
+  text-shadow: 0 0 8px rgba(255, 0, 128, 0.8), 0 0 20px rgba(255, 0, 128, 0.4);
+}
+
+/* Futuristic Scanline Effect */
+.hologram-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 243, 255, 0.025) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.02),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.02)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Hexagon Grid Pattern */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 243, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 243, 255, 0.07) 1px, transparent 1px);
+}
+
+/* Reticle rotation */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulse-hologram {
+  0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 8px rgba(0,243,255,0.6)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 16px rgba(0,243,255,0.95)); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 16s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 22s linear infinite;
+}
+
+.animate-hologram {
+  animation: pulse-hologram 3s ease-in-out infinite;
+}
+
+/* Micro-vibrations and Depth Shifts for Air Gesture & Clicking */
+@keyframes holo-micro-vibrate {
+  0% { transform: scale(0.92) translate(0, 0); }
+  20% { transform: scale(0.92) translate(-1.5px, 1px); }
+  40% { transform: scale(0.93) translate(1.5px, -1px); }
+  60% { transform: scale(0.94) translate(-0.8px, 0.5px); }
+  80% { transform: scale(0.96) translate(0.5px, -0.5px); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+@keyframes holo-float-a {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(0.3deg); }
+}
+
+@keyframes holo-float-b {
+  0%, 100% { transform: translateY(-3px) rotate(-0.3deg); }
+  50% { transform: translateY(2px) rotate(0.2deg); }
+}
+
+@keyframes holo-shockwave {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+    box-shadow: 0 0 0 0 rgba(0, 243, 255, 0.8), inset 0 0 10px rgba(0, 243, 255, 0.6);
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+    box-shadow: 0 0 35px 25px rgba(0, 243, 255, 0), inset 0 0 25px rgba(0, 243, 255, 0);
+  }
+}
+
+.animate-micro-vibrate {
+  animation: holo-micro-vibrate 0.28s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.animate-float-a {
+  animation: holo-float-a 4s ease-in-out infinite;
+}
+
+.animate-float-b {
+  animation: holo-float-b 4.8s ease-in-out infinite;
+}
+
+.animate-shockwave {
+  animation: holo-shockwave 0.5s ease-out forwards;
+}
+
+/* 3D Perspective Transformation Layer for Spatial UI */
+.holo-3d-layer, .perspective-spatial {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Universal 3D Depth Shift Button Class */
+.holo-btn, .holo-depth-btn {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) translateZ(0);
+  will-change: transform, box-shadow;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.22s ease, 
+              border-color 0.22s ease, 
+              background-color 0.22s ease,
+              color 0.15s ease;
+}
+
+/* Z-Axis Depth Shift on Hover: element visually rises toward user */
+.holo-btn:hover, .holo-depth-btn:hover {
+  transform: perspective(1000px) translateZ(24px) translateY(-3px) scale(1.04);
+  box-shadow: 0 14px 32px -4px rgba(0, 243, 255, 0.45), 
+              0 0 24px rgba(0, 243, 255, 0.65), 
+              inset 0 0 16px rgba(0, 243, 255, 0.3);
+  z-index: 10;
+}
+
+/* Z-Axis Depth Shift on Click / Air-Tap: pushes deep into the screen */
+.holo-btn:active, .holo-btn.air-active, .holo-depth-btn:active {
+  transform: perspective(1000px) translateZ(-34px) translateY(3px) scale(0.92);
+  box-shadow: 0 2px 10px rgba(0, 255, 157, 0.3), 
+              inset 0 4px 20px rgba(0, 255, 157, 0.65), 
+              0 0 35px rgba(0, 255, 157, 0.9);
+  border-color: #00ff9d !important;
+}
+
+/* Custom sci-fi scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(3, 7, 18, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 243, 255, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 243, 255, 0.6);
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Krypton Vision AI",
+  "description": "Futuristic modular scientific workspace featuring holographic gesture HUD, precision geometry engine, 3D laboratory, and phone camera bridge.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
